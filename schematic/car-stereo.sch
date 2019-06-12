@@ -1,0 +1,283 @@
+EESchema Schematic File Version 4
+EELAYER 29 0
+EELAYER END
+$Descr A 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "Car Stereo Power Supply"
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Transistor_FET:IRF9540N Q1
+U 1 1 5D01472D
+P 7600 4300
+F 0 "Q1" H 7806 4346 50  0000 L CNN
+F 1 "‎IRF5210PBF‎" H 7806 4255 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 7800 4225 50  0001 L CIN
+F 3 "http://www.irf.com/product-info/datasheets/data/irf9540n.pdf" H 7600 4300 50  0001 L CNN
+	1    7600 4300
+	1    0    0    1   
+$EndComp
+$Comp
+L Diode:C5D50065D D1
+U 1 1 5D01952D
+P 7450 3950
+F 0 "D1" H 7450 4266 50  0000 C CNN
+F 1 "MBRF20100CTG" H 7450 4175 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-247-3_Vertical" H 7450 3775 50  0001 C CNN
+F 3 "https://www.wolfspeed.com/media/downloads/111/C5D50065D.pdf" H 7450 3950 50  0001 C CNN
+	1    7450 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5D01C537
+P 7150 4550
+F 0 "R1" H 7220 4596 50  0000 L CNN
+F 1 "10K" H 7220 4505 50  0000 L CNN
+F 2 "" V 7080 4550 50  0001 C CNN
+F 3 "~" H 7150 4550 50  0001 C CNN
+	1    7150 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 4300 7150 4300
+Wire Wire Line
+	7150 4300 7150 4400
+Wire Wire Line
+	7700 4100 7700 3950
+Wire Wire Line
+	7700 3950 7650 3950
+$Comp
+L power:GND #PWR04
+U 1 1 5D021AA1
+P 7150 4800
+F 0 "#PWR04" H 7150 4550 50  0001 C CNN
+F 1 "GND" H 7155 4627 50  0000 C CNN
+F 2 "" H 7150 4800 50  0001 C CNN
+F 3 "" H 7150 4800 50  0001 C CNN
+	1    7150 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 4050 7150 4050
+Wire Wire Line
+	7150 4050 7150 4300
+Connection ~ 7150 4300
+Wire Wire Line
+	7150 4700 7150 4800
+NoConn ~ 7250 3850
+Text Notes 3800 5800 0    50   ~ 0
+VDC from wall art approx 10V unloaded
+$Comp
+L Switch:SW_SPST SW1
+U 1 1 5D02B985
+P 6500 5100
+F 0 "SW1" V 6546 5012 50  0000 R CNN
+F 1 "SW_SPST" V 6455 5012 50  0000 R CNN
+F 2 "" H 6500 5100 50  0001 C CNN
+F 3 "~" H 6500 5100 50  0001 C CNN
+	1    6500 5100
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6500 5300 6500 5400
+Wire Wire Line
+	6500 4900 6500 4800
+Wire Wire Line
+	6500 4800 6000 4800
+Text GLabel 6000 4800 0    50   Input ~ 0
+ATX_PS_ON
+Text GLabel 6000 4300 0    50   Input ~ 0
+ATX_12V
+Text GLabel 6000 4450 0    50   Input ~ 0
+ATX_GND
+$Comp
+L power:GND #PWR01
+U 1 1 5D02FAAB
+P 6100 4500
+F 0 "#PWR01" H 6100 4250 50  0001 C CNN
+F 1 "GND" H 6105 4327 50  0000 C CNN
+F 2 "" H 6100 4500 50  0001 C CNN
+F 3 "" H 6100 4500 50  0001 C CNN
+	1    6100 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 4450 6100 4450
+Wire Wire Line
+	6100 4450 6100 4500
+Text GLabel 6000 5750 0    50   Input ~ 0
+WALL_WART_DC
+Text GLabel 6000 5900 0    50   Input ~ 0
+WALL_WART_GND
+$Comp
+L power:GND #PWR02
+U 1 1 5D0311D1
+P 6100 5950
+F 0 "#PWR02" H 6100 5700 50  0001 C CNN
+F 1 "GND" H 6105 5777 50  0000 C CNN
+F 2 "" H 6100 5950 50  0001 C CNN
+F 3 "" H 6100 5950 50  0001 C CNN
+	1    6100 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 5900 6100 5900
+Wire Wire Line
+	6100 5900 6100 5950
+Wire Wire Line
+	6000 5750 7700 5750
+Wire Wire Line
+	7700 4500 7700 5750
+Wire Wire Line
+	6000 4300 7150 4300
+Text GLabel 8850 3950 2    50   Input ~ 0
+STEREO_12V
+Text GLabel 8850 4100 2    50   Input ~ 0
+STEREO_GND
+$Comp
+L power:GND #PWR05
+U 1 1 5D03551D
+P 8750 4150
+F 0 "#PWR05" H 8750 3900 50  0001 C CNN
+F 1 "GND" H 8755 3977 50  0000 C CNN
+F 2 "" H 8750 4150 50  0001 C CNN
+F 3 "" H 8750 4150 50  0001 C CNN
+	1    8750 4150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8850 4100 8750 4100
+Wire Wire Line
+	8750 4100 8750 4150
+Text GLabel 8850 3800 2    50   Input ~ 0
+STEREO_REMOTE
+Wire Wire Line
+	8850 3800 8500 3800
+Wire Wire Line
+	8500 3800 8500 3500
+Wire Wire Line
+	7150 3500 7150 4050
+Connection ~ 7150 4050
+$Comp
+L power:GND #PWR03
+U 1 1 5D037A75
+P 6500 5400
+F 0 "#PWR03" H 6500 5150 50  0001 C CNN
+F 1 "GND" H 6505 5227 50  0000 C CNN
+F 2 "" H 6500 5400 50  0001 C CNN
+F 3 "" H 6500 5400 50  0001 C CNN
+	1    6500 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Fuse F2
+U 1 1 5D03E8CE
+P 8200 3950
+F 0 "F2" V 8003 3950 50  0000 C CNN
+F 1 "15A" V 8094 3950 50  0000 C CNN
+F 2 "" V 8130 3950 50  0001 C CNN
+F 3 "~" H 8200 3950 50  0001 C CNN
+	1    8200 3950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8350 3950 8850 3950
+Wire Wire Line
+	8050 3950 7700 3950
+Connection ~ 7700 3950
+$Comp
+L Device:Fuse F1
+U 1 1 5D040CED
+P 7800 3500
+F 0 "F1" V 7603 3500 50  0000 C CNN
+F 1 "1A" V 7694 3500 50  0000 C CNN
+F 2 "" V 7730 3500 50  0001 C CNN
+F 3 "~" H 7800 3500 50  0001 C CNN
+	1    7800 3500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7950 3500 8500 3500
+Wire Wire Line
+	7650 3500 7150 3500
+$Comp
+L power:AC #PWR?
+U 1 1 5D042454
+P 3000 4200
+F 0 "#PWR?" H 3000 4100 50  0001 C CNN
+F 1 "AC" H 3000 4475 50  0000 C CNN
+F 2 "" H 3000 4200 50  0001 C CNN
+F 3 "" H 3000 4200 50  0001 C CNN
+	1    3000 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:NEUT #PWR?
+U 1 1 5D0447B4
+P 2750 4200
+F 0 "#PWR?" H 2750 4050 50  0001 C CNN
+F 1 "NEUT" H 2767 4373 50  0000 C CNN
+F 2 "" H 2750 4200 50  0001 C CNN
+F 3 "" H 2750 4200 50  0001 C CNN
+	1    2750 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR?
+U 1 1 5D044FFB
+P 3200 5250
+F 0 "#PWR?" H 3200 5000 50  0001 C CNN
+F 1 "Earth" H 3200 5100 50  0001 C CNN
+F 2 "" H 3200 5250 50  0001 C CNN
+F 3 "~" H 3200 5250 50  0001 C CNN
+	1    3200 5250
+	1    0    0    -1  
+$EndComp
+Text GLabel 3350 4300 2    50   Input ~ 0
+ATX_AC_HOT
+Text GLabel 3350 4450 2    50   Input ~ 0
+ATX_AC_NEUT
+Text GLabel 3350 4600 2    50   Input ~ 0
+ATX_AC_EARTH
+Wire Wire Line
+	3000 4200 3000 4300
+Wire Wire Line
+	3000 4300 3350 4300
+Wire Wire Line
+	3350 4450 2750 4450
+Wire Wire Line
+	2750 4450 2750 4200
+Text GLabel 3350 4750 2    50   Input ~ 0
+WALL_WART_AC_HOT
+Text GLabel 3350 4900 2    50   Input ~ 0
+WALL_WART_AC_NEUT
+Text GLabel 3350 5050 2    50   Input ~ 0
+WALL_WART_AC_EARTH
+Wire Wire Line
+	3350 4600 3200 4600
+Wire Wire Line
+	3200 4600 3200 5050
+Wire Wire Line
+	3350 5050 3200 5050
+Connection ~ 3200 5050
+Wire Wire Line
+	3200 5050 3200 5250
+Wire Wire Line
+	3350 4750 3000 4750
+Wire Wire Line
+	3000 4750 3000 4300
+Connection ~ 3000 4300
+Wire Wire Line
+	3350 4900 2750 4900
+Wire Wire Line
+	2750 4900 2750 4450
+Connection ~ 2750 4450
+$EndSCHEMATC
