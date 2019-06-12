@@ -1,21 +1,28 @@
 # ATX power supply powered car stereo
 An ATX power supply powered car stereo project. Made using recycled electronics with the addition of a few inexpensive components.
 
-## Why?
-I've had this old Alpine head unit laying around for years, and I wanted to some music for my workshop. The design I came up with reuses existing electronics most hobbyists probably already have laying around.
+front: 
+![alt text](pictures/front.png "ATX power supply powered car stereo")
 
-## Build
-So the basic building blocks are as follows
+back: 
+![alt text](pictures/back.png "ATX power supply powered car stereo")
+
+## Why?
+I had an old Alpine head unit laying around, and I wanted to some music for my workshop. The design I came up with reuses existing electronics most hobbyists probably already have laying around.
+
+I actually built this back in 2009, and just recently my ATX power supply died. I swapped the power supply and it's working good as new. 10 years of life is pretty good in my opinion especially considering how much this has been used in the dead of summer when the garage is 100 degrees.
+
+## Design
+The basic building blocks are as follows
 - Car stereo head unit
 - ATX power supply >250W
 - DC Wall wart 6V (it needs to output around 8-10V unloaded)
 - A few electronic components (listed below)
 - A box to put it all in (up to you)
 
-## Design
-So the design is quite simple, we use two power supplies. The ATX power supply does all the heavy lifting and powers the stereo when it's powered on. The wall wart is used to provide a constant power source and act like a battery in the car. You need this so the stereo doesn't lose all its settings everytime you power it off.
+The design is quite simple, we use two power supplies. The ATX power supply does all the heavy lifting and powers the stereo when it's powered on. The wall wart is used to provide a constant power source and act like a battery in the car. You need this so the stereo doesn't lose all its settings everytime you power it off.
 
-So the wall wart and ATX power supply are both connected to 120V all the time, and a switch is used to turn on the ATX power supply. When the power supply is turned a small electronic circuit is used to allow current to flow from the ATX power supply while stopping current from flowing from the wall wart.
+The wall wart and ATX power supply are both connected to 120V all the time, and a switch is used to turn on the ATX power supply. When the power supply is turned a small electronic circuit is used to allow current to flow from the ATX power supply while stopping current from flowing from the wall wart.
 
 The Power Supply Schematic is shown here: 
 ![alt text](schematic/car-stereo.png "Power Supply Schematic")
@@ -40,6 +47,14 @@ All parts are avaible from digikey or mouser
 
 ## Assembly
 Follow the schematic to wire up your power supply and to the stereo and ATX. For the stereo you'll have to do some digging or experimenting to figure out which wires are your 12V in, remote in, and speaker wires. Search online for a manual - you might get lucky.
+
+I chose to twist, then solder my wires together. A wire nut is probably a better choice in case you need to do some maintenance on it.
+
+inside: 
+![alt text](pictures/inside1.png "ATX power supply powered car stereo")
+
+power supply board: 
+![alt text](pictures/inside2.png "ATX power supply powered car stereo")
 
 ## Notes
 The fuses are obviously optional but are a good idea. I chose to add some speaker terminals I bought at a salvage yard along with some RC jacks for the aux input.
